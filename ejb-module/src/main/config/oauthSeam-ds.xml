@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<datasources>
+	<local-tx-datasource>
+		<jndi-name>oauth-seam</jndi-name>
+		<connection-url>jdbc:oracle:thin:@localhost:1521/xe</connection-url>
+		<driver-class>oracle.jdbc.OracleDriver</driver-class>
+		<user-name>testdb</user-name>
+		<password>testdb</password>  
+		<min-pool-size>25</min-pool-size>
+		<max-pool-size>40</max-pool-size>
+	</local-tx-datasource>
+</datasources>

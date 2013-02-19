@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classloading xmlns="urn:jboss:classloading:1.0"               parent-first="false"
+              domain="DefaultDomain"
+              parent-domain="Ignored" top-level-classloader="true"
+              export-all="NON_EMPTY"
+              import-all="true">
+	<!-- capabilities>
+        <package name="com.pearson.qglobal" />
+parent-domain="DefaultDomain" 
+	export-all="NON_EMPTY" 
+              top-level-classloader="true"
+	import-all="true"
+	excluded="META-INF"
+	    </capabilities-->
+    
+
+</classloading>

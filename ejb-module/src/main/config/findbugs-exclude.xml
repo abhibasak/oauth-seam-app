@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  see: http://findbugs.sourceforge.net/manual/filter.html -->
+<FindBugsFilter>
+	<!--  ignore message about inner class -->
+	<Match>
+		<Bug pattern="SIC_INNER_SHOULD_BE_STATIC_ANON,UWF_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR,NP_UNWRITTEN_FIELD,UWF_UNWRITTEN_FIELD" />
+	</Match>
+	<Match>
+		<Class name="com.pearson.qglobal.core.util.importassessment.MTxFileUtil" />
+	</Match>	
+</FindBugsFilter>

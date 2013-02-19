@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<ruleset name="Custom ruleset" xmlns="http://pmd.sf.net/ruleset/1.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://pmd.sf.net/ruleset/1.0.0 http://pmd.sf.net/ruleset_xml_schema.xsd"
+	xsi:noNamespaceSchemaLocation="http://pmd.sf.net/ruleset_xml_schema.xsd">
+
+	<!-- see: http://pmd.sourceforge.net/rules/index.html and http://pmd.sourceforge.net/howtomakearuleset.html -->
+	<description></description>
+	<rule ref="rulesets/basic.xml" />
+	<rule ref="rulesets/braces.xml" />
+	<rule ref="rulesets/clone.xml" />
+	<rule ref="rulesets/codesize.xml">
+		<exclude name="TooManyFields" />
+		<exclude name="TooManyMethods" />
+		<exclude name="ExcessivePublicCount"/>
+		<exclude name="ExcessiveParameterList"/>
+		<exclude name="ExcessiveClassLength"/>
+	</rule>	
+	<rule ref="rulesets/coupling.xml">
+		<exclude name="ExcessiveImports" />
+	</rule>
+	<rule ref="rulesets/design.xml">
+		<exclude name="PositionLiteralsFirstInComparisons" />
+		<exclude name="ConfusingTernary" />
+	</rule>
+	<rule ref="rulesets/imports.xml" />
+	<rule ref="rulesets/logging-jakarta-commons.xml">
+		<exclude name="ProperLogger" />
+	</rule>
+	<rule ref="rulesets/naming.xml">
+		<exclude name="ShortVariable" />
+		<exclude name="LongVariable" />
+	</rule>
+	<rule ref="rulesets/optimizations.xml">
+		<exclude name="AvoidInstantiatingObjectsInLoops" />
+	</rule>
+	<rule ref="rulesets/strictexception.xml" />
+	<rule ref="rulesets/strings.xml" />
+	<rule ref="rulesets/sunsecure.xml" />
+	<rule ref="rulesets/typeresolution.xml" />
+	<rule ref="rulesets/unusedcode.xml" />
+
+	<!-- Our customizations -->
+    <rule ref="rulesets/codesize.xml/TooManyFields">
+        <properties>
+            <property name="maxfields" value="90" />
+        </properties>
+    </rule>
+	<rule ref="rulesets/codesize.xml/TooManyMethods">
+		<properties>
+			<property name="maxmethods" value="200" />
+		</properties>
+	</rule>	
+	<rule ref="rulesets/coupling.xml/ExcessiveImports">
+		<properties>
+			<property name="minimum" value="80" />
+		</properties>
+	</rule>
+	<rule ref="rulesets/naming.xml/LongVariable">
+		<properties>
+			<property name="minimum" value="40" />
+		</properties>
+	</rule>
+	<rule ref="rulesets/codesize.xml/ExcessivePublicCount">
+		<properties>
+			<property name="minimum" value="200" />
+		</properties>
+	</rule>
+	<rule ref="rulesets/codesize.xml/ExcessiveParameterList">
+		<properties>
+			<property name="minimum" value="16" />
+		</properties>
+	</rule>
+	<rule ref="rulesets/codesize.xml/ExcessiveClassLength">
+		<properties>
+			<property name="minimum" value="1500" />
+		</properties>
+	</rule>
+</ruleset>

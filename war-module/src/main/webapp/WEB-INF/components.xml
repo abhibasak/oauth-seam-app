@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<components xmlns="http://jboss.com/products/seam/components"
+	xmlns:persistence="http://jboss.com/products/seam/persistence"
+	xmlns:core="http://jboss.com/products/seam/core" 
+	xmlns:web="http://jboss.com/products/seam/web" 
+	xmlns:resteasy="http://jboss.com/products/seam/resteasy"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://jboss.com/products/seam/core http://jboss.com/products/seam/core-2.2.xsd  
+                 http://jboss.com/products/seam/components http://jboss.com/products/seam/components-2.2.xsd 
+                 http://jboss.com/products/seam/persistence http://jboss.com/products/seam/persistence-2.2.xsd 
+                 http://jboss.com/products/seam/web http://jboss.com/products/seam/web-2.2.xsd
+                 http://jboss.com/products/seam/resteasy http://jboss.com/products/seam/resteasy-2.2.xsd">
+
+	<core:init jndi-pattern="@jndiPattern@" debug="@debug@" distributable="@distributable@"/>
+	
+	<core:manager conversation-timeout="900000"
+		concurrent-request-timeout="900000" 
+		conversation-id-parameter="cid" />
+
+	<persistence:managed-persistence-context
+		name="entityManager" auto-create="true" persistence-unit-jndi-name="java:/oauthSeamEntityManagerFactory" />
+
+	<web:character-encoding-filter encoding="UTF-8"
+		override-client="true" url-pattern="*.seam" />
+		
+	<web:exception-filter url-pattern="*.seam"/>
+	
+	<component name="org.jboss.seam.transaction.facesTransactionEvents">
+    	<property name="transactionFailedMessageEnabled">false</property>
+	</component>
+
+	<resteasy:application resource-path-prefix="/oauth-seam-rest"/>
+</components>
